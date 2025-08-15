@@ -1,5 +1,24 @@
 version: '3.8'
 services:
+  # Serviço para a nossa aplicação Node.js
+  app:
+    # O 'build' diz ao Docker Compose para construir a imagem a partir do Dockerfile
+    build: .
+    # Mapeia a porta 5000 do container para a porta 5000 da sua máquina
+    ports:
+      - "5000:5000"
+    # Mapeia a pasta do seu projeto para o container.
+    # Isso permite que o código seja atualizado no container instantaneamente,
+    # sem precisar reconstruir a imagem. Útil para desenvolvimento.
+    volumes:
+      - .:/app
+    # Conecta este serviço à rede do MongoDB
+    depends_on:
+      - mongodb
+    env_file:
+      - .env
+
+  # Serviço para o banco de dados MongoDB
   mongodb:
     image: mongo:latest
     container_name: mongodb_auth
