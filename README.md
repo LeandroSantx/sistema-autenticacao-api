@@ -36,7 +36,7 @@ Este guia irá te ajudar a configurar e rodar o projeto em sua máquina local em
 Abra o terminal e execute o comando abaixo para clonar o projeto:
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/LeandroSantx/sistema-autenticacao-api.git
 ```
 
 Em seguida, entre na pasta do projeto:
