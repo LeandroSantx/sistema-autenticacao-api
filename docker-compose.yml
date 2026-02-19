@@ -12,6 +12,7 @@ services:
     # sem precisar reconstruir a imagem. Útil para desenvolvimento.
     volumes:
       - .:/app
+      - /app/node_modules
     # Conecta este serviço à rede do MongoDB
     depends_on:
       - mongodb
